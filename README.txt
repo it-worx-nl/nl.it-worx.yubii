@@ -1,4 +1,4 @@
-Control the shutters of your Nice Yubii Home or Fibaro Home Center 3 directly from Homey — locally, no cloud.
+Control the devices of your Nice Yubii Home or Fibaro Home Center 3 directly from Homey — locally, no cloud: shutters, gates, lights, switches and sensors.
 
 Features
 - Shutters and awnings: open, close and stop, with a position slider when the shutter reports its position

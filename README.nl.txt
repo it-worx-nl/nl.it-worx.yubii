@@ -1,4 +1,4 @@
-Bedien de rolluiken van je Nice Yubii Home of Fibaro Home Center 3 rechtstreeks vanuit Homey — lokaal, zonder cloud.
+Bedien de apparaten van je Nice Yubii Home of Fibaro Home Center 3 rechtstreeks vanuit Homey — lokaal, zonder cloud: rolluiken, poorten, lampen, schakelaars en sensoren.
 
 Wat kan de app?
 - Rolluiken en zonwering: open, dicht en stop, met standschuif als het rolluik zijn positie doorgeeft
