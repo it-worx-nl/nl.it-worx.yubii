@@ -1,6 +1,6 @@
 {
   "name": "nl.it-worx.yubii",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "private": true,
   "description": "Homey app for Nice Yubii Home and Fibaro Home Center 3 (local API)",
   "main": "app.js",
