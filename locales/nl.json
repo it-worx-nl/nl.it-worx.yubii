@@ -1,0 +1,27 @@
+{
+  "pair": {
+    "title": "Verbind met je hub",
+    "subtitle": "Nice Yubii Home of Fibaro Home Center 3 in je eigen netwerk",
+    "host": "IP-adres van de hub",
+    "username": "Gebruikersnaam",
+    "password": "Wachtwoord",
+    "connect": "Verbinden",
+    "lockout_hint": "Let op: de hub blokkeert inloggen een tijdje na 4 foute pogingen. Controleer je gegevens voordat je verbindt.",
+    "unreachable": "Geen Yubii/HC3-hub bereikbaar op __host__",
+    "unauthorized": "Gebruikersnaam of wachtwoord onjuist",
+    "attempts_left": "pogingen over voordat de hub inloggen blokkeert",
+    "not_connected": "Niet verbonden met een hub",
+    "searching": "Zoeken naar je hub in het netwerk…",
+    "none_found": "Geen hub gevonden in het netwerk — vul het IP-adres zelf in.",
+    "found_one": "Gevonden: __name__ (__host__)",
+    "found_more": "__count__ hubs gevonden — kies de juiste",
+    "manual": "Ander IP-adres invullen…",
+    "username_hint": "De naam van een gebruiker van je hub (Instellingen → Toegang → Gebruikers), bijvoorbeeld \"admin\". Tip: maak een aparte gebruiker aan voor Homey."
+  },
+  "device": {
+    "unauthorized": "Inloggen geweigerd door de hub — controleer gebruikersnaam/wachtwoord in de apparaatinstellingen",
+    "unreachable": "Hub niet bereikbaar — controleer het IP-adres in de apparaatinstellingen",
+    "dead": "Apparaat reageert niet (gemeld door de hub)",
+    "hub_error": "De hub gaf een foutmelding — bestaat het apparaat nog in de hub?"
+  }
+}

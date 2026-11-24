@@ -1,0 +1,17 @@
+{
+  "title": {
+    "en": "Stop",
+    "nl": "Stop"
+  },
+  "hint": {
+    "en": "Stop the gate or garage door",
+    "nl": "Stop de poort of garagedeur"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=garagedoor"
+    }
+  ]
+}

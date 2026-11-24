@@ -1,0 +1,27 @@
+{
+  "pair": {
+    "title": "Connect to your hub",
+    "subtitle": "Nice Yubii Home or Fibaro Home Center 3 on your local network",
+    "host": "IP address of the hub",
+    "username": "Username",
+    "password": "Password",
+    "connect": "Connect",
+    "lockout_hint": "Tip: the hub blocks logins for a while after 4 wrong attempts. Check your details before connecting.",
+    "unreachable": "Cannot reach a Yubii/HC3 hub at __host__",
+    "unauthorized": "Wrong username or password",
+    "attempts_left": "attempts left before the hub blocks logins",
+    "not_connected": "Not connected to a hub",
+    "searching": "Searching your network for a hub…",
+    "none_found": "No hub found on the network — enter the IP address yourself.",
+    "found_one": "Found: __name__ (__host__)",
+    "found_more": "Found __count__ hubs — choose the right one",
+    "manual": "Enter another IP address…",
+    "username_hint": "The name of a user on your hub (Settings → Access → Users), e.g. \"admin\". Tip: create a separate user for Homey."
+  },
+  "device": {
+    "unauthorized": "Login rejected by the hub — check username/password in the device settings",
+    "unreachable": "Hub not reachable — check the IP address in the device settings",
+    "dead": "Device not responding (reported by the hub)",
+    "hub_error": "The hub returned an error — does the device still exist on the hub?"
+  }
+}

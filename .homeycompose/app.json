@@ -1,0 +1,82 @@
+{
+  "id": "nl.it-worx.yubii",
+  "version": "0.2.2",
+  "compatibility": ">=12.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Yubii Home & Fibaro HC3",
+    "nl": "Yubii Home & Fibaro HC3"
+  },
+  "description": {
+    "en": "Control your Nice Yubii Home or Fibaro Home Center 3 devices locally",
+    "nl": "Bedien de apparaten van je Nice Yubii Home of Fibaro Home Center 3 lokaal"
+  },
+  "category": [
+    "appliances"
+  ],
+  "permissions": [],
+  "brandColor": "#0A0A0A",
+  "author": {
+    "name": "IT WORX",
+    "email": "homeysupport@it-worx.nl"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Jean-Marc Zohlandt"
+      }
+    ]
+  },
+  "homepage": "https://it-worx.nl",
+  "support": "mailto:homeysupport@it-worx.nl",
+  "tags": {
+    "en": [
+      "Yubii",
+      "Yubii Home",
+      "Nice",
+      "Fibaro",
+      "Home Center 3",
+      "HC3",
+      "HC3 Lite",
+      "shutter",
+      "roller shutter",
+      "blinds",
+      "local",
+      "gate",
+      "garage door",
+      "light",
+      "dimmer",
+      "sensor"
+    ],
+    "nl": [
+      "Yubii",
+      "Yubii Home",
+      "Nice",
+      "Fibaro",
+      "Home Center 3",
+      "HC3",
+      "HC3 Lite",
+      "rolluik",
+      "rolluiken",
+      "zonwering",
+      "lokaal",
+      "poort",
+      "garagedeur",
+      "lamp",
+      "dimmer",
+      "sensor"
+    ]
+  },
+  "source": "https://github.com/it-worx-nl/nl.it-worx.yubii",
+  "bugs": {
+    "url": "https://github.com/it-worx-nl/nl.it-worx.yubii/issues"
+  }
+}

@@ -1,0 +1,549 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "nl.it-worx.yubii",
+  "version": "0.2.2",
+  "compatibility": ">=12.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Yubii Home & Fibaro HC3",
+    "nl": "Yubii Home & Fibaro HC3"
+  },
+  "description": {
+    "en": "Control your Nice Yubii Home or Fibaro Home Center 3 devices locally",
+    "nl": "Bedien de apparaten van je Nice Yubii Home of Fibaro Home Center 3 lokaal"
+  },
+  "category": [
+    "appliances"
+  ],
+  "permissions": [],
+  "brandColor": "#0A0A0A",
+  "author": {
+    "name": "IT WORX",
+    "email": "homeysupport@it-worx.nl"
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Jean-Marc Zohlandt"
+      }
+    ]
+  },
+  "homepage": "https://it-worx.nl",
+  "support": "mailto:homeysupport@it-worx.nl",
+  "tags": {
+    "en": [
+      "Yubii",
+      "Yubii Home",
+      "Nice",
+      "Fibaro",
+      "Home Center 3",
+      "HC3",
+      "HC3 Lite",
+      "shutter",
+      "roller shutter",
+      "blinds",
+      "local",
+      "gate",
+      "garage door",
+      "light",
+      "dimmer",
+      "sensor"
+    ],
+    "nl": [
+      "Yubii",
+      "Yubii Home",
+      "Nice",
+      "Fibaro",
+      "Home Center 3",
+      "HC3",
+      "HC3 Lite",
+      "rolluik",
+      "rolluiken",
+      "zonwering",
+      "lokaal",
+      "poort",
+      "garagedeur",
+      "lamp",
+      "dimmer",
+      "sensor"
+    ]
+  },
+  "source": "https://github.com/it-worx-nl/nl.it-worx.yubii",
+  "bugs": {
+    "url": "https://github.com/it-worx-nl/nl.it-worx.yubii/issues"
+  },
+  "flow": {
+    "actions": [
+      {
+        "title": {
+          "en": "Stop",
+          "nl": "Stop"
+        },
+        "hint": {
+          "en": "Stop the gate or garage door",
+          "nl": "Stop de poort of garagedeur"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=garagedoor"
+          }
+        ],
+        "id": "garagedoor_stop"
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "pair": [
+        {
+          "id": "connect"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "name": {
+        "en": "Gate / garage door",
+        "nl": "Poort / garagedeur"
+      },
+      "class": "garagedoor",
+      "capabilities": [
+        "garagedoor_closed"
+      ],
+      "images": {
+        "small": "/drivers/garagedoor/assets/images/small.png",
+        "large": "/drivers/garagedoor/assets/images/large.png",
+        "xlarge": "/drivers/garagedoor/assets/images/xlarge.png"
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Hub connection",
+            "nl": "Verbinding met de hub"
+          },
+          "children": [
+            {
+              "id": "host",
+              "type": "text",
+              "label": {
+                "en": "IP address",
+                "nl": "IP-adres"
+              },
+              "value": ""
+            },
+            {
+              "id": "username",
+              "type": "text",
+              "label": {
+                "en": "Username",
+                "nl": "Gebruikersnaam"
+              },
+              "value": ""
+            },
+            {
+              "id": "password",
+              "type": "password",
+              "label": {
+                "en": "Password",
+                "nl": "Wachtwoord"
+              },
+              "value": ""
+            }
+          ]
+        }
+      ],
+      "id": "garagedoor"
+    },
+    {
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "pair": [
+        {
+          "id": "connect"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "name": {
+        "en": "Light / dimmer",
+        "nl": "Lamp / dimmer"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "small": "/drivers/light/assets/images/small.png",
+        "large": "/drivers/light/assets/images/large.png",
+        "xlarge": "/drivers/light/assets/images/xlarge.png"
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Hub connection",
+            "nl": "Verbinding met de hub"
+          },
+          "children": [
+            {
+              "id": "host",
+              "type": "text",
+              "label": {
+                "en": "IP address",
+                "nl": "IP-adres"
+              },
+              "value": ""
+            },
+            {
+              "id": "username",
+              "type": "text",
+              "label": {
+                "en": "Username",
+                "nl": "Gebruikersnaam"
+              },
+              "value": ""
+            },
+            {
+              "id": "password",
+              "type": "password",
+              "label": {
+                "en": "Password",
+                "nl": "Wachtwoord"
+              },
+              "value": ""
+            }
+          ]
+        }
+      ],
+      "id": "light"
+    },
+    {
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "pair": [
+        {
+          "id": "connect"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "name": {
+        "en": "Sensor",
+        "nl": "Sensor"
+      },
+      "class": "sensor",
+      "capabilities": [],
+      "images": {
+        "small": "/drivers/sensor/assets/images/small.png",
+        "large": "/drivers/sensor/assets/images/large.png",
+        "xlarge": "/drivers/sensor/assets/images/xlarge.png"
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Hub connection",
+            "nl": "Verbinding met de hub"
+          },
+          "children": [
+            {
+              "id": "host",
+              "type": "text",
+              "label": {
+                "en": "IP address",
+                "nl": "IP-adres"
+              },
+              "value": ""
+            },
+            {
+              "id": "username",
+              "type": "text",
+              "label": {
+                "en": "Username",
+                "nl": "Gebruikersnaam"
+              },
+              "value": ""
+            },
+            {
+              "id": "password",
+              "type": "password",
+              "label": {
+                "en": "Password",
+                "nl": "Wachtwoord"
+              },
+              "value": ""
+            }
+          ]
+        }
+      ],
+      "id": "sensor"
+    },
+    {
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "pair": [
+        {
+          "id": "connect"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "name": {
+        "en": "Shutter",
+        "nl": "Rolluik"
+      },
+      "class": "windowcoverings",
+      "capabilities": [
+        "windowcoverings_state"
+      ],
+      "images": {
+        "small": "/drivers/shutter/assets/images/small.png",
+        "large": "/drivers/shutter/assets/images/large.png",
+        "xlarge": "/drivers/shutter/assets/images/xlarge.png"
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Hub connection",
+            "nl": "Verbinding met de hub"
+          },
+          "children": [
+            {
+              "id": "host",
+              "type": "text",
+              "label": {
+                "en": "IP address",
+                "nl": "IP-adres"
+              },
+              "value": ""
+            },
+            {
+              "id": "username",
+              "type": "text",
+              "label": {
+                "en": "Username",
+                "nl": "Gebruikersnaam"
+              },
+              "value": ""
+            },
+            {
+              "id": "password",
+              "type": "password",
+              "label": {
+                "en": "Password",
+                "nl": "Wachtwoord"
+              },
+              "value": ""
+            }
+          ]
+        },
+        {
+          "id": "travel_time",
+          "type": "number",
+          "label": {
+            "en": "Travel time (s)",
+            "nl": "Looptijd (s)"
+          },
+          "hint": {
+            "en": "Time the shutter needs to fully open or close. After this time the state returns to idle (the hub gives no feedback for one-way RF shutters).",
+            "nl": "Tijd die het rolluik nodig heeft om helemaal open of dicht te gaan. Daarna gaat de status naar stil (de hub geeft geen terugmelding bij eenrichtingszenders)."
+          },
+          "value": 30,
+          "min": 5,
+          "max": 180
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Reliability",
+            "nl": "Betrouwbaarheid"
+          },
+          "children": [
+            {
+              "id": "repeat_count",
+              "type": "number",
+              "label": {
+                "en": "Repeat open/close",
+                "nl": "Open/dicht herhalen"
+              },
+              "hint": {
+                "en": "One-way RF shutters give no confirmation, so a command can get lost. Send open/close this many extra times. Stop is never repeated. 0 = off.",
+                "nl": "Eenrichtingsrolluiken geven geen bevestiging, dus een opdracht kan verloren gaan. Stuur open/dicht zoveel keer extra. Stop wordt nooit herhaald. 0 = uit."
+              },
+              "value": 0,
+              "min": 0,
+              "max": 3
+            },
+            {
+              "id": "repeat_delay",
+              "type": "number",
+              "label": {
+                "en": "Delay between repeats (s)",
+                "nl": "Pauze tussen herhalingen (s)"
+              },
+              "value": 2,
+              "min": 1,
+              "max": 10
+            }
+          ]
+        }
+      ],
+      "id": "shutter"
+    },
+    {
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "pair": [
+        {
+          "id": "connect"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "name": {
+        "en": "Switch / plug",
+        "nl": "Schakelaar / stopcontact"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "small": "/drivers/socket/assets/images/small.png",
+        "large": "/drivers/socket/assets/images/large.png",
+        "xlarge": "/drivers/socket/assets/images/xlarge.png"
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Hub connection",
+            "nl": "Verbinding met de hub"
+          },
+          "children": [
+            {
+              "id": "host",
+              "type": "text",
+              "label": {
+                "en": "IP address",
+                "nl": "IP-adres"
+              },
+              "value": ""
+            },
+            {
+              "id": "username",
+              "type": "text",
+              "label": {
+                "en": "Username",
+                "nl": "Gebruikersnaam"
+              },
+              "value": ""
+            },
+            {
+              "id": "password",
+              "type": "password",
+              "label": {
+                "en": "Password",
+                "nl": "Wachtwoord"
+              },
+              "value": ""
+            }
+          ]
+        }
+      ],
+      "id": "socket"
+    }
+  ],
+  "discovery": {
+    "fibargroup": {
+      "type": "mac",
+      "mac": {
+        "manufacturer": [
+          [
+            172,
+            23,
+            2
+          ]
+        ]
+      }
+    }
+  }
+}

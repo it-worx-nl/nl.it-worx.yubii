@@ -1,0 +1,77 @@
+<header class="homey-header">
+  <h1 class="homey-title" data-i18n="pair.title"></h1>
+  <p class="homey-subtitle" data-i18n="pair.subtitle"></p>
+</header>
+
+<form class="homey-form" id="form">
+  <div class="homey-form-group">
+    <label class="homey-form-label" for="host" data-i18n="pair.host"></label>
+    <select class="homey-form-select" id="hub" style="display:none"></select>
+    <input class="homey-form-input" id="host" type="text" placeholder="192.168.1.10" autocomplete="off" />
+    <p class="homey-form-hint" id="scan" data-i18n="pair.searching"></p>
+  </div>
+  <div class="homey-form-group">
+    <label class="homey-form-label" for="username" data-i18n="pair.username"></label>
+    <input class="homey-form-input" id="username" type="text" autocomplete="off" />
+    <p class="homey-form-hint" data-i18n="pair.username_hint"></p>
+  </div>
+  <div class="homey-form-group">
+    <label class="homey-form-label" for="password" data-i18n="pair.password"></label>
+    <input class="homey-form-input" id="password" type="password" />
+  </div>
+  <p class="homey-form-hint" data-i18n="pair.lockout_hint"></p>
+  <button class="homey-button-primary-full" id="connect" type="submit" data-i18n="pair.connect"></button>
+</form>
+
+<script type="text/javascript">
+  var hostInput = document.getElementById('host');
+  var hubSelect = document.getElementById('hub');
+  var scan = document.getElementById('scan');
+
+  // Search the network for Yubii/HC3 hubs and pre-fill the IP address
+  Homey.emit('discover').then(function (hubs) {
+    if (!hubs || hubs.length === 0) {
+      scan.textContent = Homey.__('pair.none_found');
+      return;
+    }
+    if (hubs.length === 1) {
+      hostInput.value = hubs[0].host;
+      scan.textContent = Homey.__('pair.found_one', { name: hubs[0].name, host: hubs[0].host });
+      return;
+    }
+    hubs.forEach(function (h) {
+      var o = document.createElement('option');
+      o.value = h.host; o.textContent = h.name + ' (' + h.host + ')';
+      hubSelect.appendChild(o);
+    });
+    var manual = document.createElement('option');
+    manual.value = ''; manual.textContent = Homey.__('pair.manual');
+    hubSelect.appendChild(manual);
+    hubSelect.style.display = '';
+    hostInput.value = hubs[0].host;
+    hostInput.style.display = 'none';
+    scan.textContent = Homey.__('pair.found_more', { count: hubs.length });
+    hubSelect.addEventListener('change', function () {
+      hostInput.value = hubSelect.value;
+      hostInput.style.display = hubSelect.value ? 'none' : '';
+    });
+  }).catch(function () {
+    scan.textContent = Homey.__('pair.none_found');
+  });
+
+  document.getElementById('form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var btn = document.getElementById('connect');
+    btn.classList.add('is-loading');
+    Homey.emit('connect', {
+      host: hostInput.value,
+      username: document.getElementById('username').value,
+      password: document.getElementById('password').value,
+    }).then(function () {
+      Homey.showView('list_devices');
+    }).catch(function (err) {
+      btn.classList.remove('is-loading');
+      Homey.alert(err.message || String(err), 'error');
+    });
+  });
+</script>

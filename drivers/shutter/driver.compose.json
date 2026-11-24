@@ -1,0 +1,104 @@
+{
+  "$extends": "hub",
+  "name": {
+    "en": "Shutter",
+    "nl": "Rolluik"
+  },
+  "class": "windowcoverings",
+  "capabilities": [
+    "windowcoverings_state"
+  ],
+  "images": {
+    "small": "/drivers/shutter/assets/images/small.png",
+    "large": "/drivers/shutter/assets/images/large.png",
+    "xlarge": "/drivers/shutter/assets/images/xlarge.png"
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Hub connection",
+        "nl": "Verbinding met de hub"
+      },
+      "children": [
+        {
+          "id": "host",
+          "type": "text",
+          "label": {
+            "en": "IP address",
+            "nl": "IP-adres"
+          },
+          "value": ""
+        },
+        {
+          "id": "username",
+          "type": "text",
+          "label": {
+            "en": "Username",
+            "nl": "Gebruikersnaam"
+          },
+          "value": ""
+        },
+        {
+          "id": "password",
+          "type": "password",
+          "label": {
+            "en": "Password",
+            "nl": "Wachtwoord"
+          },
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "travel_time",
+      "type": "number",
+      "label": {
+        "en": "Travel time (s)",
+        "nl": "Looptijd (s)"
+      },
+      "hint": {
+        "en": "Time the shutter needs to fully open or close. After this time the state returns to idle (the hub gives no feedback for one-way RF shutters).",
+        "nl": "Tijd die het rolluik nodig heeft om helemaal open of dicht te gaan. Daarna gaat de status naar stil (de hub geeft geen terugmelding bij eenrichtingszenders)."
+      },
+      "value": 30,
+      "min": 5,
+      "max": 180
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Reliability",
+        "nl": "Betrouwbaarheid"
+      },
+      "children": [
+        {
+          "id": "repeat_count",
+          "type": "number",
+          "label": {
+            "en": "Repeat open/close",
+            "nl": "Open/dicht herhalen"
+          },
+          "hint": {
+            "en": "One-way RF shutters give no confirmation, so a command can get lost. Send open/close this many extra times. Stop is never repeated. 0 = off.",
+            "nl": "Eenrichtingsrolluiken geven geen bevestiging, dus een opdracht kan verloren gaan. Stuur open/dicht zoveel keer extra. Stop wordt nooit herhaald. 0 = uit."
+          },
+          "value": 0,
+          "min": 0,
+          "max": 3
+        },
+        {
+          "id": "repeat_delay",
+          "type": "number",
+          "label": {
+            "en": "Delay between repeats (s)",
+            "nl": "Pauze tussen herhalingen (s)"
+          },
+          "value": 2,
+          "min": 1,
+          "max": 10
+        }
+      ]
+    }
+  ]
+}

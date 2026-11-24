@@ -1,0 +1,11 @@
+{
+  "0.1.2": {
+    "en": "First release: control Nice Yubii Home / Fibaro HC3 shutters locally (open, close, stop, travel time, command repeat)."
+  },
+  "0.2.1": {
+    "en": "More device types (beta): Nice gates/garage doors, lights/dimmers, switches/plugs with power, sensors. Automatic hub discovery. Live state updates via the hub change feed."
+  },
+  "0.2.2": {
+    "en": "Fixes: changing the connection on one device now updates all devices of that hub; no missed changes at startup; clearer error messages."
+  }
+}

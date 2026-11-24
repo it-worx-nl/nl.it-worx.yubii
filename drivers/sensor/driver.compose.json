@@ -1,0 +1,52 @@
+{
+  "$extends": "hub",
+  "name": {
+    "en": "Sensor",
+    "nl": "Sensor"
+  },
+  "class": "sensor",
+  "capabilities": [],
+  "images": {
+    "small": "/drivers/sensor/assets/images/small.png",
+    "large": "/drivers/sensor/assets/images/large.png",
+    "xlarge": "/drivers/sensor/assets/images/xlarge.png"
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Hub connection",
+        "nl": "Verbinding met de hub"
+      },
+      "children": [
+        {
+          "id": "host",
+          "type": "text",
+          "label": {
+            "en": "IP address",
+            "nl": "IP-adres"
+          },
+          "value": ""
+        },
+        {
+          "id": "username",
+          "type": "text",
+          "label": {
+            "en": "Username",
+            "nl": "Gebruikersnaam"
+          },
+          "value": ""
+        },
+        {
+          "id": "password",
+          "type": "password",
+          "label": {
+            "en": "Password",
+            "nl": "Wachtwoord"
+          },
+          "value": ""
+        }
+      ]
+    }
+  ]
+}
