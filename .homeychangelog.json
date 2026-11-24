@@ -7,5 +7,8 @@
   },
   "0.2.2": {
     "en": "Fixes: changing the connection on one device now updates all devices of that hub; no missed changes at startup; clearer error messages."
+  },
+  "0.2.3": {
+    "en": "Links to source code and issue tracker on GitHub."
   }
 }
